@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerar PDF</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            width: 100%;
+            overflow-y: auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        input,
+        select,
+        textarea,
+        button {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Preencha os dados para gerar o PDF</h1>
+        <form method="POST">
+            <label for="Nome do Paciente">Nome do Paciente:</label>
+            <input type="text" id="Nome do Paciente" name="Nome do Paciente" required>
+
+            <label for="Prontuário">Prontuário:</label>
+            <input type="text" id="Prontuário" name="Prontuário" required>
+
+            <label for="Data de realização do exame">Data de realização do exame:</label>
+            <input type="date" id="Data de realização do exame" name="Data de realização do exame" required>
+
+            <label for="Data de nascimento">Data de nascimento:</label>
+            <input type="date" id="Data de nascimento" name="Data de nascimento" required>
+
+            <label for="Sexo">Sexo:</label>
+            <select id="Sexo" name="Sexo" required>
+                <option value="Masculino">Masculino</option>
+                <option value="Feminino">Feminino</option>
+                <option value="Outro">Outro</option>
+            </select>
+
+            <label for="Hora de realização do exame">Hora de realização do exame:</label>
+            <input type="time" id="Hora de realização do exame" name="Hora de realização do exame" required>
+
+            <label for="Idade">Idade:</label>
+            <input type="number" id="Idade" name="Idade" required>
+
+            <label for="Indicação do exame / História clínica">Indicação do exame / História clínica:</label>
+            <textarea id="Indicação do exame / História clínica"
+                name="Indicação do exame / História clínica"></textarea>
+
+            <label for="Implante">Implante:</label>
+            <select id="Implante" name="Implante" required>
+                <option value="" selected disabled>Selecione uma opção</option>
+                <option value="sem">Não</option>
+                <option value="com">Sim</option>
+            </select>
+            <label for="Tomossíntese">Tomossíntese:</label>
+            <select id="Tomossíntese" name="Tomossíntese" required>
+                <option value="" selected disabled>Selecione uma opção</option>
+                <option value="sem">Não</option>
+                <option value="com">Sim</option>
+            </select>
+            <label for="Limitação">Limitação:</label>
+            <select id="Limitação" name="Limitação" required>
+                <option value="" selected disabled>Selecione uma opção</option>
+                <option value="sem">Não</option>
+                <option value="com">Sim</option>
+            </select>
+
+            <!-- <label for="Técnica do exame">Técnica do exame:</label>
+            <textarea id="Técnica do exame" name="Técnica do exame" required></textarea> -->
+
+            <label for="Descrição da composição da mama / padrão de densidade">Descrição da composição da mama / padrão
+                de densidade:</label>
+            <textarea id="Descrição da composição da mama / padrão de densidade"
+                name="Descrição da composição da mama / padrão de densidade"></textarea>
+
+            <label for="Descrição dos achados mamográfico">Descrição dos achados mamográfico:</label>
+            <textarea id="Descrição dos achados mamográfico" name="Descrição dos achados mamográfico"></textarea>
+
+            <label for="Avaliação comparativa com exames anteriores">Avaliação comparativa com exames
+                anteriores:</label>
+            <textarea id="Avaliação comparativa com exames anteriores"
+                name="Avaliação comparativa com exames anteriores"></textarea>
+
+            <label for="Categoria BI-RADS">Categoria BI-RADS:</label>
+            <input type="text" id="Categoria BI-RADS" name="Categoria BI-RADS">
+
+            <label for="Recomendação de conduta">Recomendação de conduta:</label>
+            <textarea id="Recomendação de conduta" name="Recomendação de conduta"></textarea>
+
+            <button type="submit">Gerar PDF</button>
+        </form>
+    </div>
+</body>
+
+</html>
